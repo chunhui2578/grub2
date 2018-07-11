@@ -889,8 +889,8 @@ module = {
 
 module = {
   name = reboot;
-  i386 = lib/i386/reboot.c;
-  i386 = lib/i386/reboot_trampoline.S;
+  i386_pc = lib/i386/reboot.c;
+  i386_pc = lib/i386/reboot_trampoline.S;
   powerpc_ieee1275 = lib/ieee1275/reboot.c;
   sparc64_ieee1275 = lib/ieee1275/reboot.c;
   mips_arc = lib/mips/arc/reboot.c;
@@ -899,6 +899,7 @@ module = {
   xen = lib/xen/reboot.c;
   uboot = lib/uboot/reboot.c;
   arm_coreboot = lib/dummy/reboot.c;
+  efi = lib/efi/reboot.c;
   common = commands/reboot.c;
 };
 

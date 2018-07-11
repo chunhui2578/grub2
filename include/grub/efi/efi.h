@@ -29,6 +29,7 @@ extern grub_efi_system_table_t *EXPORT_VAR(grub_efi_system_table);
 extern grub_efi_handle_t EXPORT_VAR(grub_efi_image_handle);
 
 /* Functions.  */
+void EXPORT_FUNC(grub_efi_reboot) (void) __attribute__ ((noreturn));
 void *EXPORT_FUNC(grub_efi_locate_protocol) (grub_efi_guid_t *protocol,
 					     void *registration);
 grub_efi_handle_t *

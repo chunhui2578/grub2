@@ -49,7 +49,7 @@ grub_cmd_fwsetup (grub_command_t cmd __attribute__ ((unused)),
   if (status != GRUB_ERR_NONE)
     return status;
 
-  grub_reboot ();
+  grub_efi_reboot ();
 
   return GRUB_ERR_BUG;
 }
