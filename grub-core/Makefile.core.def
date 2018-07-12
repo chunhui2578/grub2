@@ -166,7 +166,6 @@ kernel = {
   arm_coreboot = kern/arm/coreboot/init.c;
   arm_coreboot = kern/arm/coreboot/timer.c;
   arm_coreboot = kern/arm/coreboot/coreboot.S;
-  arm_coreboot = lib/fdt.c;
   arm_coreboot = bus/fdt.c;
   arm_coreboot = term/ps2.c;
   arm_coreboot = term/arm/pl050.c;
@@ -240,10 +239,8 @@ kernel = {
   ia64_efi = kern/ia64/cache.c;
 
   arm_efi = kern/arm/efi/init.c;
-  arm_efi = kern/efi/fdt.c;
 
   arm64_efi = kern/arm64/efi/init.c;
-  arm64_efi = kern/efi/fdt.c;
 
   i386_pc = kern/i386/pc/init.c;
   i386_pc = kern/i386/pc/mmap.c;
@@ -1715,7 +1712,6 @@ module = {
   arm_uboot = loader/arm/linux.c;
   arm64 = loader/arm64/linux.c;
   emu = loader/emu/linux.c;
-  fdt = lib/fdt.c;
 
   common = loader/linux.c;
   common = lib/cmdline.c;
@@ -1725,7 +1721,7 @@ module = {
 
 module = {
   name = fdt;
-  efi = loader/efi/fdt.c;
+  arm64 = loader/efi/fdt.c;
   common = lib/fdt.c;
   enable = fdt;
 };
@@ -1789,7 +1785,8 @@ module = {
   i386_coreboot = lib/LzmaDec.c;
   enable = i386_pc;
   enable = i386_coreboot;
-  enable = efi;
+  enable = i386_efi;
+  enable = x86_64_efi;
 };
 
 module = {
